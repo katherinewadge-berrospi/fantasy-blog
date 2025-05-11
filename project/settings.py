@@ -29,11 +29,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'away-with-the-faeries-61d308bdeab5.herokuapp.com',
-    '127.0.0.1',
-]
-
+ALLOWED_HOSTS = ['.herokuapp.com',
+                 '127.0.0.1',]
 
 
 # Application definition
@@ -90,17 +87,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
     #}
 #}
 
-#DATABASES = {
-#    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-#}
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=600,
-        ssl_require=True
-    )
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation
