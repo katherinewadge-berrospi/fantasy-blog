@@ -19,6 +19,7 @@ from django.urls import path
 from blog.views import my_blog
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('blog/', my_blog, name='blog'),
+    path('admin/', admin.site.urls),   # admin now moves to /admin/
+    # path('',        my_blog, name='home'),   # your blog at /
+    path('blog/',   my_blog, name='blog'),
 ]
