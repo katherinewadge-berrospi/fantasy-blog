@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6qk9w&@41_@fn7v!h9jw7tqpw6hel4331b@s1n*%113ui18k&e'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'http://127.0.0.1:8000/',
     'https://away-with-the-faeries-61d308bdeab5.herokuapp.com/',
+    'https://git.heroku.com/away-with-the-faeries.git',
 ]
 
 
