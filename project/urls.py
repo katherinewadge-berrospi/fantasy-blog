@@ -16,18 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from blog import views as blog_views
 from about import views as about_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # Mount the blog view at the root:
-    path('', blog_views.my_blog, name='home'),
-
-    # (optional) keep your /blog/ prefix too:
-    path('blog/', blog_views.my_blog, name='my_blog'),
-
+    path("", include("blog.urls"), name="blog-urls"),
     path('about/', about_views.about_me, name='about'),
 ]
