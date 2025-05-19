@@ -1,0 +1,1 @@
+console.log("Once upon a time, in a land long since burnt to ash, there lived a young princess who loved her kingdom dearly.");
