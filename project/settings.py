@@ -32,8 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com',
                  '127.0.0.1',
-                 'localhost',
-                 'https://away-with-the-faeries-61d308bdeab5.herokuapp.com/']
+                 'localhost',]
 
 
 # Application definition
@@ -55,7 +54,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'blog',
-    'about',
+    'about'
 ]
 
 SITE_ID = 1
@@ -67,13 +66,13 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
 
