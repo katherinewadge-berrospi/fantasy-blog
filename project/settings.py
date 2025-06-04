@@ -32,7 +32,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com',
                  '127.0.0.1',
-                 'localhost',]
+                 'localhost',
+                 'https://away-with-the-faeries-61d308bdeab5.herokuapp.com/']
 
 
 # Application definition
