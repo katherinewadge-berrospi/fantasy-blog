@@ -7,6 +7,7 @@
     --clr-deep-purple: #4f0f74;
     --clr-gold:     #be9b53;
     --clr-cream:    #fffdeb;
+    --clr-cards: #f5f1df;
     --clr-dark-green: #0f1b10;
     --transition-speed: 0.3s;
 }
@@ -33,6 +34,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar .navbar-brand, .navbar .nav-link, .navbar-text {
     color: var(--clr-cream) !important;
+    font-size: 1.4rem;    /* bump up link size for readability */
+    font-weight: 500;
 }
 .navbar .nav-link:hover, .navbar .navbar-brand:hover {
     color: var(--clr-gold) !important;
@@ -87,7 +90,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 
 /* Cards */
 .card {
-    background: var(--clr-cream);
+    background: var(--clr-cards);
     border: 1px solid var(--clr-gold);
     border-radius: 1.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -97,6 +100,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 .card .card-title, .post-title {
     font-family: 'Cinzel Decor', serif;
     color: var(--clr-forest);
+    font-weight: bold;
 }
 .card .card-text, .card .post-subtitle {
     color: #555;
@@ -109,6 +113,8 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 
  .col-md-4 .card:hover {
     transform: translateY(-5px);
+    background-color: #ecf1dc;
+    border-color: var(--clr-deep-purple);
 }
 
 /* Masthead / Hero (post_detail.html) */
@@ -145,18 +151,6 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 }
 .col-md-4.card:hover {
   transform: none !important;
-}
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
 }
 
 .scale {
