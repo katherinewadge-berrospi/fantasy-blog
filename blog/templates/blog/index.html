@@ -12,18 +12,7 @@
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                    alt="placeholder image" loading="lazy">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" loading="lazy">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
+                        <div class="card-body">                         
                             {% load static %}
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
@@ -33,7 +22,9 @@
                             <img src="{% static 'images/flower-banner.png' %}"
                             alt="Floral border" class="card-border-img"/>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            <p class="card-text author">
+                                Author: {{ post.author }}
+                            </p>
                         </div>
                     </div>
                 </div>
