@@ -3,39 +3,39 @@
 
 /* Define our jewel-toned palette & transition speed */
 :root {
-  --clr-forest:   #1e381f;
-  --clr-deep-purple: #4f0f74;
-  --clr-gold:     #be9b53;
-  --clr-cream:    #fffdeb;
-  --clr-dark-green: #0f1b10;
-  --transition-speed: 0.3s;
+    --clr-forest:   #1e381f;
+    --clr-deep-purple: #4f0f74;
+    --clr-gold:     #be9b53;
+    --clr-cream:    #fffdeb;
+    --clr-dark-green: #0f1b10;
+    --transition-speed: 0.3s;
 }
 
 /* General styling */
 
 body {
-  background-color: var(--clr-cream) !important;
-  font-family: 'Lora', serif;
-  color: #2c2c2c;
-  line-height: 1.6;
+    background-color: var(--clr-cream) !important;
+    font-family: 'Lora', serif;
+    color: #2c2c2c;
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel Decor', serif;
-  color: var(--clr-forest);
-  line-height: 1.2;
-  margin-bottom: 0.75em;
+    font-family: 'Cinzel Decor', serif;
+    color: var(--clr-forest);
+    line-height: 1.2;
+    margin-bottom: 0.75em;
 }
 
 /* Navbar */
 .navbar, .navbar-light.bg-white {
-  background: var(--clr-forest) !important;
+    background: var(--clr-forest) !important;
 }
 .navbar .navbar-brand, .navbar .nav-link, .navbar-text {
-  color: var(--clr-cream) !important;
+    color: var(--clr-cream) !important;
 }
 .navbar .nav-link:hover, .navbar .navbar-brand:hover {
-  color: var(--clr-gold) !important;
+    color: var(--clr-gold) !important;
 }
 
 .thin {
@@ -44,59 +44,78 @@ h1, h2, h3, h4, h5, h6 {
 
 /* FOOTER */
 .dark-bg, footer.footer {
-  background: var(--clr-dark-green);
-  color: var(--clr-cream);
+    background: var(--clr-dark-green);
+    color: var(--clr-cream);
 }
 footer a {
-  color: var(--clr-gold);
+    color: var(--clr-gold);
 }
 footer a:hover { text-decoration: underline; }
 
 /* Links */
 a, .post-link {
-  color: var(--clr-deep-purple);
-  text-decoration: none;
-  position: relative;
-  transition: color var(--transition-speed);
+    color: var(--clr-deep-purple);
+    text-decoration: none;
+    position: relative;
+    transition: color var(--transition-speed);
 }
 a::after, .post-link::after {
-  content: '';
-  position: absolute; bottom: -2px; left: 0;
-  width: 0; height: 2px; background: var(--clr-deep-purple);
-  transition: width var(--transition-speed);
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 2px; background: var(--clr-deep-purple);
+    transition: width var(--transition-speed);
 }
 a:hover, .post-link:hover { color: var(--clr-gold); }
 a:hover::after, .post-link:hover::after { width: 100%; }
 
 /* Buttons */
 button, .btn, .btn-secondary, .btn-signup {
-  background: var(--clr-deep-purple) !important;
-  color: var(--clr-cream)    !important;
-  border-radius: 1rem;
-  padding: 0.75rem 1.5rem;
-  transition: transform var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
+    background: var(--clr-deep-purple) !important;
+    color: var(--clr-cream)    !important;
+    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    transition: transform var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
 }
 button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
-  transform: scale(1.05);
-  background: var(--clr-gold) !important;
-  color: var(--clr-forest)   !important;
+    transform: scale(1.05);
+    background: var(--clr-gold) !important;
+    color: var(--clr-forest)   !important;
 }
 
 /* Cards */
 .card {
-  background: var(--clr-cream);
-  border: 1px solid var(--clr-gold);
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform var(--transition-speed);
+    background: var(--clr-cream);
+    border: 1px solid var(--clr-gold);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform var(--transition-speed);
 }
 .card:hover { transform: translateY(-5px); }
 .card .card-title, .post-title {
-  font-family: 'Cinzel Decor', serif;
-  color: var(--clr-forest);
+    font-family: 'Cinzel Decor', serif;
+    color: var(--clr-forest);
 }
 .card .card-text, .card .post-subtitle {
-  color: #555;
+    color: #555;
+}
+
+/* Masthead / Hero (post_detail.html) */
+.masthead {
+    background: url('static\images\green-mountains-landscape.jpg') center/cover no-repeat fixed;
+    padding: 3rem 1rem;
+    color: var(--clr-forest);
+}
+.masthead-text h1, .post-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.masthead-text p, .post-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #424742;
+    font-weight: 200;
 }
 
 .image-container {
@@ -120,40 +139,6 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     color: white;
     margin: 4px;
     text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
 }
 
 .post-link {
