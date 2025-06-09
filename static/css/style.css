@@ -38,11 +38,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--clr-gold) !important;
 }
 
-.thin {
-    font-weight: 300;
+.navbar-brand .logo-img {
+  height: 5rem;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-/* FOOTER */
+/* Footer */
 .dark-bg, footer.footer {
     background: var(--clr-dark-green);
     color: var(--clr-cream);
@@ -125,6 +128,23 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     font-size: 1.2rem;
     color: #424742;
     font-weight: 200;
+}
+
+/* Disable outline & movement on the comments section */
+.col-md-8.card {
+  border: none;
+  box-shadow: none;
+}
+.col-md-8.card:hover {
+  transform: none;
+}
+
+.col-md-4.card {
+  border: none !important;
+  box-shadow: none !important;
+}
+.col-md-4.card:hover {
+  transform: none !important;
 }
 
 .image-container {
