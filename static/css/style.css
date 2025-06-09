@@ -4,16 +4,14 @@
 /* Define our jewel-toned palette & transition speed */
 :root {
   --clr-forest:   #2A3D2B;
-  --clr-eggplant: #5D3A72;
+  --clr-deep-purple: #5D3A72;
   --clr-gold:     #C6A664;
   --clr-cream:    #F2E8CF;
   --transition-speed: 0.3s;
 }
 
-body, .main-bg {
+body {
   background-color: var(--clr-cream);
-  /* background-image: url('static\images\parchment-background.jpg');
-  background-repeat: inherit; */
   font-family: 'Lora', serif;
   color: #333;
   line-height: 1.6;
@@ -21,10 +19,26 @@ body, .main-bg {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cinzel Decor', serif;
-  color: #2A3D2B;
+  color: var(--clr-forest);
   line-height: 1.2;
   margin-bottom: 0.75em;
 }
+
+/* LINKS */
+a, .post-link {
+  color: var(--clr-deep-purple);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+a::after, .post-link::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0;
+  width: 0; height: 2px; background: var(--clr-gold);
+  transition: width var(--transition-speed);
+}
+a:hover, .post-link:hover { color: var(--clr-gold); }
+a:hover::after, .post-link:hover::after { width: 100%; }
 
 .brand {
     font-family: Lato, sans-serif;
