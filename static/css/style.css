@@ -1,3 +1,15 @@
+/* Import our three Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decor&family=Dancing+Script&family=Lora:wght@400;700&display=swap');
+
+/* Define our jewel-toned palette & transition speed */
+:root {
+  --clr-forest:   #2A3D2B;
+  --clr-eggplant: #5D3A72;
+  --clr-gold:     #C6A664;
+  --clr-cream:    #F2E8CF;
+  --transition-speed: 0.3s;
+}
+
 body {
     background-color: #F9FAFC;
 }
