@@ -7,6 +7,7 @@
   --clr-deep-purple: #4f0f74;
   --clr-gold:     #be9b53;
   --clr-cream:    #fffdeb;
+  --clr-dark-green: #0f1b10;
   --transition-speed: 0.3s;
 }
 
@@ -36,6 +37,16 @@ h1, h2, h3, h4, h5, h6 {
 .navbar .nav-link:hover, .navbar .navbar-brand:hover {
   color: var(--clr-gold) !important;
 }
+
+/* FOOTER */
+.dark-bg, footer.footer {
+  background: var(--clr-dark-green);
+  color: var(--clr-cream);
+}
+footer a {
+  color: var(--clr-gold);
+}
+footer a:hover { text-decoration: underline; }
 
 /* Links */
 a, .post-link {
