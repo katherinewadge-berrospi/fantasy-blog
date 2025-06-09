@@ -10,8 +10,13 @@
   --transition-speed: 0.3s;
 }
 
-body {
-    background-color: #F9FAFC;
+body, .main-bg {
+  background-color: var(--clr-cream);
+  /* background-image: url('static\images\parchment-background.jpg');
+  background-repeat: inherit; */
+  font-family: 'Lora', serif;
+  color: #333;
+  line-height: 1.6;
 }
 
 .brand {
