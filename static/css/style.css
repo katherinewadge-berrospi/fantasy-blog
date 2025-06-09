@@ -102,7 +102,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     color: #555;
 }
 
-/* only index-grid cards lift on hover */
+/* Only index-grid cards lift on hover */
 .col-md-4 .card {
     transition: transform var(--transition-speed);
 }
