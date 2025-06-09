@@ -231,3 +231,20 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+.hero {
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* full-width floral border under each card’s excerpt */
+.card-border-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
