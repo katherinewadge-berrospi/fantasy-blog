@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--clr-gold) !important;
 }
 
+.thin {
+    font-weight: 300;
+}
+
 /* FOOTER */
 .dark-bg, footer.footer {
   background: var(--clr-dark-green);
@@ -61,7 +65,7 @@ a::after, .post-link::after {
   width: 0; height: 2px; background: var(--clr-deep-purple);
   transition: width var(--transition-speed);
 }
-a:hover, .post-link:hover { color: var(--clr-deep-purple); }
+a:hover, .post-link:hover { color: var(--clr-gold); }
 a:hover::after, .post-link:hover::after { width: 100%; }
 
 /* Buttons */
@@ -78,21 +82,21 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   color: var(--clr-forest)   !important;
 }
 
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
+/* Cards */
 .card {
-    border: none;
-    background-color: transparent;
+  background: var(--clr-cream);
+  border: 1px solid var(--clr-gold);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed);
+}
+.card:hover { transform: translateY(-5px); }
+.card .card-title, .post-title {
+  font-family: 'Cinzel Decor', serif;
+  color: var(--clr-forest);
+}
+.card .card-text, .card .post-subtitle {
+  color: #555;
 }
 
 .image-container {
