@@ -90,13 +90,22 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform var(--transition-speed);
 }
-.card:hover { transform: translateY(-5px); }
+
 .card .card-title, .post-title {
     font-family: 'Cinzel Decor', serif;
     color: var(--clr-forest);
 }
 .card .card-text, .card .post-subtitle {
     color: #555;
+}
+
+/* only index-grid cards lift on hover */
+.col-md-4 .card {
+    transition: transform var(--transition-speed);
+}
+
+ .col-md-4 .card:hover {
+    transform: translateY(-5px);
 }
 
 /* Masthead / Hero (post_detail.html) */
