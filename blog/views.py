@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
+from .models import Post, Like
 
 
 # Create your views here.
@@ -46,15 +47,20 @@ def post_detail(request, slug):
 
     comment_form = CommentForm()
 
+    has_liked = False
+    if request.user.is_authenticated:
+        has_liked = post.likes.filter(user=request.user).exists()
+
     return render(
-    request,
-    "blog/post_detail.html",
-    {
-        "post": post,
-        "comments": comments,
-        "comment_count": comment_count,
-        "comment_form": comment_form,
-    },
+        request,
+        "blog/post_detail.html",
+        {
+            "post": post,
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form,
+            "has_liked": has_liked,
+        },
 )
 
 def comment_edit(request, slug, comment_id):
@@ -95,3 +101,14 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def like_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    if request.user.is_authenticated:
+        like, created = Like.objects.get_or_create(post=post, user=request.user)
+        if not created:
+            like.delete()
+
+    return redirect('post_detail', slug=slug)
