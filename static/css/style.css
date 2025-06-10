@@ -109,7 +109,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 /* Cards */
 .card {
     background: var(--clr-cards);
-    border: 1px solid var(--clr-gold);
+    border: 3px solid var(--clr-gold);
     border-radius: 1.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform var(--transition-speed);
