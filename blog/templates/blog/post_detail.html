@@ -29,6 +29,19 @@
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'like_post' post.slug %}" method="POST">
+                        {% csrf_token %}
+                        {% if has_liked %}
+                            <button type="submit" class="btn btn-secondary">👎</button>
+                        {% else %}
+                            <button type="submit" class="btn btn-primary">👍</button>
+                        {% endif %}
+                        <span>{{ post.total_likes }} Like{{ post.total_likes|pluralize }}</span>
+                    </form>
+                {% else %}
+                    <p><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
+                {% endif %}
             </div>
         </div>
     </div>
