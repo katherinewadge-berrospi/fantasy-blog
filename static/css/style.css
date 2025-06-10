@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.75em;
 }
 
+.container-fluid {
+    padding-bottom: 30px;
+}
+
 /* Navbar */
 .navbar, .navbar-light.bg-white {
     background: var(--clr-navbar) !important;
