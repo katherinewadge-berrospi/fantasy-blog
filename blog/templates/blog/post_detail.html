@@ -5,43 +5,38 @@
 <div class="container cream-box my-4 p-4 rounded">
     <div class="row g-0 align-items-center">
         <div class="col-md-6">
-                <h1 class="post-title">{{ post.title }}</h1>
+            <h1 class="post-title">{{ post.title }}</h1>
             <p class="post-subtitle"><em>{{ post.author }} | {{ post.created_on }}</em></p>
-            </div>
-        <div class="d-none d-md-block col-md-6 text-end">
-                {% if post.featured_image %}
-                <img src="{{ post.featured_image.url }}" class="img-fluid rounded" alt="featured image" loading="lazy">
-                {% endif %}
-            </div>
         </div>
+        <div class="d-none d-md-block col-md-6 text-end">
+            {% if post.featured_image %}
+                <img src="{{ post.featured_image.url }}" class="img-fluid rounded" alt="featured image" loading="lazy">
+            {% endif %}
+        </div>
+    </div>
 
     <hr>
 
-<div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
-                    {{ post.content | safe }}
-                </p>
-                {% if user.is_authenticated %}
-                    <form action="{% url 'like_post' post.slug %}" method="POST">
-                        {% csrf_token %}
-                        {% if has_liked %}
-                            <button type="submit" class="btn btn-secondary">👎</button>
-                        {% else %}
-                            <button type="submit" class="btn btn-primary">👍</button>
-                        {% endif %}
-                        <span>{{ post.total_likes }} Like{{ post.total_likes|pluralize }}</span>
-                    </form>
-                {% else %}
-                    <p><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
-                {% endif %}
-            </div>
+        <div class="col">
+            <p class="card-text">{{ post.content|safe }}</p>
+            {% if user.is_authenticated %}
+                <form action="{% url 'like_post' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if has_liked %}
+                        <button type="submit" class="btn btn-secondary">👎</button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">👍</button>
+                    {% endif %}
+                    <span>{{ post.total_likes }} Like{{ post.total_likes|pluralize }}</span>
+                </form>
+            {% else %}
+                <p><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
+            {% endif %}
         </div>
     </div>
+</div>
+<div class="container cream-box my-4 p-4 rounded">
     <!-- Displaying count of comments -->
     <div class="row">
         <div class="col-12">
