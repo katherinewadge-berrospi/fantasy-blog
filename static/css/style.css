@@ -4,10 +4,10 @@
 /* Define our jewel-toned palette & transition speed */
 :root {
     --clr-forest:   #1e381f;
-    --clr-deep-purple: #4f0f74;
+    --clr-deep-purple: #673772;
     --clr-gold:     #be9b53;
-    --clr-cream:    #fffdeb;
-    --clr-cards: #f5f1df;
+    --clr-cream:    #ebebff;
+    --clr-cards: #ecdff5;
     --clr-dark-green: #0f1b10;
     --clr-navbar: #142f16ed;
     --transition-speed: 0.3s;
@@ -152,6 +152,12 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     font-size: 1.2rem;
     color: #424742;
     font-weight: 200;
+}
+
+.cream-box {
+    background-color: var(--clr-cream); /* or use a fixed color like #fffbe6 */
+    color: #111;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Disable outline & movement on the comments section */
