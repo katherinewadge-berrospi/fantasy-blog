@@ -14,24 +14,19 @@
           <div class="card-body d-flex flex-column">
             <a href="{% url 'post_detail' post.slug %}" class="post-link mb-3">
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <!-- Floral border under title & excerpt -->
-                            <img src="{% static 'images/flower-banner.png' %}"
-                            alt="Floral border" class="card-border-img"/>
+            </a>
+            <!-- truncate excerpt to 220 characters -->
+            <p class="card-text">{{ post.excerpt|truncatechars:220 }}</p>
+            <!-- push this block to the bottom of the card-body -->
+            <div class="mt-auto">
+              <img
+                src="{% static 'images/flower-banner.png' %}"
+                alt="Floral border"
+                class="card-border-img mb-2"
+              />
                             <hr />
-                            <p class="card-text author">
-                                Author: {{ post.author }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
+              <p class="card-text author">Author: {{ post.author }}</p>
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
             </div>
         </div>
     </div>
