@@ -171,6 +171,11 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   transform: none !important;
 }
 
+/* Logged in message */
+.cream-text {
+    color: var(--clr-cream);
+}
+
 .scale {
     width: 100%;
     height: auto;
