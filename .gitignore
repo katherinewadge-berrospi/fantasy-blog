@@ -11,3 +11,4 @@ cloudinary_python.txt
 blog/fixtures/
 staticfiles/
 blog/fixtures/
+db.sqlite3
