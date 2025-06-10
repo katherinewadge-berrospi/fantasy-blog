@@ -26,6 +26,9 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
+    @property
+    def total_likes(self):
+        return self.likes.count()
 
 # Comment model
 # This model represents a comment on a blog post
@@ -44,4 +47,24 @@ class Comment(models.Model):
     
     def __str__(self):
         return f"{self.body} | by {self.author}"
-    
+
+
+class Like(models.Model):
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name="likes"
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="likes"
+    )
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ("post", "user")
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.user.username} 👍 {self.post.title}"
