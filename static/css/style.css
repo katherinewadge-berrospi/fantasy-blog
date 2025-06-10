@@ -78,7 +78,11 @@ h1, h2, h3, h4, h5, h6 {
 footer a {
     color: var(--clr-gold);
 }
-footer a:hover { text-decoration: underline; }
+
+footer a:hover { 
+    text-decoration: underline; 
+}
+
 
 /* Links */
 a, .post-link {
