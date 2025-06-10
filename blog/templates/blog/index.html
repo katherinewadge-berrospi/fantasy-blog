@@ -4,17 +4,15 @@
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+  <!-- Add gutter classes to this row -->
+  <div class="row g-4 mt-3">
                 {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">                         
-                            {% load static %}
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+      <!-- Each column is a flex container, so its child .card can stretch -->
+      <div class="col-12 col-md-4 d-flex align-items-stretch">
+        <div class="card w-100 d-flex flex-column mb-4">
+          <!-- flex-column so we can push the footer to the bottom -->
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'post_detail' post.slug %}" class="post-link mb-3">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
