@@ -7,6 +7,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Post model
 # This model represents a blog post
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -22,7 +24,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
-    
+
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
@@ -32,6 +34,8 @@ class Post(models.Model):
 
 # Comment model
 # This model represents a comment on a blog post
+
+
 class Comment(models.Model):
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments")
@@ -44,7 +48,7 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["created_on"]
-    
+
     def __str__(self):
         return f"{self.body} | by {self.author}"
 

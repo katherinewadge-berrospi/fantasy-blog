@@ -61,7 +61,8 @@ def post_detail(request, slug):
             "comment_form": comment_form,
             "has_liked": has_liked,
         },
-)
+    )
+
 
 def comment_edit(request, slug, comment_id):
     """
@@ -81,7 +82,9 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(
+                request, messages.ERROR, 'Error updating comment!'
+            )
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -98,7 +101,9 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(
+            request, messages.ERROR, 'You can only delete your own comments!'
+        )
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -107,7 +112,8 @@ def like_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
     if request.user.is_authenticated:
-        like, created = Like.objects.get_or_create(post=post, user=request.user)
+        like, created = Like.objects.get_or_create(
+            post=post, user=request.user)
         if not created:
             like.delete()
 
