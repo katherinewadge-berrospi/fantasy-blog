@@ -14,6 +14,9 @@
 }
 
 /* General styling */
+main {
+    padding-bottom: 50px;
+}
 
 body {
     position: relative;
