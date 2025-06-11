@@ -146,7 +146,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     font-weight: bold;
 }
 .card .card-text, .card .post-subtitle {
-    color: #555;
+    color: #3d3d3d;
 }
 
 /* Only index-grid cards lift on hover */
@@ -180,9 +180,10 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 }
 
 .cream-box {
-    background-color: var(--clr-cream); /* or use a fixed color like #fffbe6 */
+    background-color: var(--clr-cream);
     color: #111;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 50px;
 }
 
 /* Disable outline & movement on the comments section */
@@ -235,7 +236,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: rgb(77, 77, 77);
 }
 
 .btn-edit {
@@ -273,7 +274,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
 }
 
 .faded {
-    color: rgb(172, 175, 175);
+    color: rgb(121, 121, 121);
 }
 
 .approval {
