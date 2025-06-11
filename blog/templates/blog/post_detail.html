@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
+            <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
         <div class="col-12">
@@ -50,13 +50,13 @@
     </div>
     <!-- Displaying Comments -->
     <div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
-        <div class="card-body">
-            <h3>Comments:</h3>
+        <div class="col-md-8 card mb-4 mt-3">
+            <div class="card-body">
+                <h3>Comments:</h3>
                 {% for comment in comments %}
-            <div class="p-2 comments>
-                {% if not comment.approved and comment.author == user %}faded
-                {% elif not comment.approved %}d-none{% endif %}">
+                <div class="p-2 comments>
+                    {% if not comment.approved and comment.author == user %}faded
+                    {% elif not comment.approved %}d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
@@ -71,29 +71,34 @@
                         This comment is awaiting approval
                     </p>
                     {% endif %}
-                    {% if user.is_authenticated and comment.author == user %}
+                {% if user.is_authenticated and comment.author == user %}
                     <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    {% endif %}
+                {% endif %}
                 </div>
             </div>
             {% endfor %}
         </div>
-        <!-- Creating New Comments -->
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
+    </div>
+    <!-- Comment Form Column -->
+    <div class="col-md-4 mb-4 mt-3">
+        <div class="card h-100 border-0">
+            <div class="card-body p-3 rounded">
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form id="commentForm" method="post"
-                    style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit"
-                    class="btn btn-signup btn-lg">Submit</button>
-                </form>
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form id="commentForm" method="post" class="mt-3">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button
+                            id="submitButton"
+                            type="submit"
+                            class="btn btn-signup btn-lg w-100 mb-3">
+                            Submit
+                        </button>
+                    </form>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                    <p>Log in to leave a comment</p>
                 {% endif %}
             </div>
         </div>
