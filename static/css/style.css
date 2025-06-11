@@ -297,3 +297,69 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   height: auto;
   margin: 1rem 0;
 }
+
+.invisible-placeholder {
+  width: 100px;
+}
+
+.alert {
+    background-color: var(--clr-cream) !important;
+    border: none !important;
+    color: #111;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.alert .btn-close {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    /* if you need it darker or lighter: */
+    color: black !important;
+    opacity: 0.5;
+}
+
+
+
+@media (min-width: 768px) {
+  .card {
+    padding: 1rem;
+    font-size: 0.8rem;
+    max-height: none !important;
+  }
+
+  .card .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card .card-text {
+    font-size: 0.8rem;
+  }
+
+  .card-border-img {
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-bottom: 150px;
+  }
+  footer.footer {
+    font-size: 0.75rem;
+  }
+  .footer i {
+    font-size: 0.75rem;
+  }
+  .invisible-placeholder {
+    display: none;
+  }
+  h1, h3 {
+    font-size: 1.rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
