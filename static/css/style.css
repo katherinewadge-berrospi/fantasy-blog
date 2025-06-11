@@ -38,7 +38,7 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 1; /* if image already has transparency, keep this at 1 */
+    opacity: 1;
     z-index: -1;
 }
 
@@ -57,17 +57,18 @@ h1, h2, h3, h4, h5, h6 {
 .navbar, .navbar-light.bg-white {
     background: var(--clr-navbar) !important;
 }
+
 .navbar .navbar-brand, .navbar .nav-link, .navbar-text {
     color: var(--clr-cream) !important;
-    font-size: 1.4rem;    /* bump up link size for readability */
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: normal;
 }
 .navbar .nav-link:hover, .navbar .navbar-brand:hover {
     color: var(--clr-gold) !important;
 }
 
 .navbar-brand .logo-img {
-  height: 5rem;
+  height: 3.5rem;
   width: auto;
   display: inline-block;
   vertical-align: middle;
@@ -75,9 +76,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .dark-bg, footer.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background: var(--clr-dark-green);
     color: var(--clr-cream);
+    z-index: 10;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
 }
+
+footer.footer p {
+  margin: 0;
+}
+
 footer a {
     color: var(--clr-gold);
 }
