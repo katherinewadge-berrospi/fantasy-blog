@@ -118,11 +118,11 @@ a:hover, .post-link:hover { color: var(--clr-gold); }
 a:hover::after, .post-link:hover::after { width: 100%; }
 
 /* Buttons */
-button, .btn, .btn-secondary, .btn-signup {
+button:not(.btn-close), .btn, .btn-secondary, .btn-signup {
     background: var(--clr-deep-purple) !important;
     color: var(--clr-cream)    !important;
-    border-radius: 1rem;
-    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
     transition: transform var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
 }
 button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
