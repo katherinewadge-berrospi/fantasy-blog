@@ -1,0 +1,8 @@
+{# templates/500.html #}
+{% extends "base.html" %}
+{% block title %}Server error{% endblock %}
+{% block content %}
+  <h1>Something went wrong.</h1>
+  <p>Our faeries are looking into it—please try again later.</p>
+  <a href="{% url 'home' %}">Back to safety</a>.
+{% endblock %}

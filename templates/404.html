@@ -1,0 +1,8 @@
+{# templates/404.html #}
+{% extends "base.html" %}
+{% block title %}Page not found{% endblock %}
+{% block content %}
+  <h1>Oops! That page doesn’t exist.</h1>
+  <p>Sorry, we couldn’t find what you were looking for.  
+  <a href="{% url 'home' %}"><strong>Return home</strong></a>.</p>
+{% endblock %}
