@@ -212,7 +212,6 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     font-size: 0.9rem;
     color: var(--clr-dark-green);
     font-weight: 550;
-    background-color: #ecdff583;
     padding: 3px;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
