@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import About
 from django.contrib import messages
 from .forms import CollaborateForm
+from django.http import HttpRequest
 
 
 # Create your views here.
@@ -35,3 +36,15 @@ def about_me(request):
             'collaborate_form': form,
         },
     )
+
+
+def custom_404(request, exception):
+    return render(request, "404.html", status=404)
+
+
+def custom_500(request):
+    return render(request, "500.html", status=500)
+
+
+def trigger_error(request: HttpRequest):
+    1 / 0
