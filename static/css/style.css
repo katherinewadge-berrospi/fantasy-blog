@@ -199,6 +199,13 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   transform: none !important;
 }
 
+.col-md-8 .card,
+.col-md-4 .card {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
 /* Logged in message */
 .logged-text span {
     font-family: 'lora', cursive;
