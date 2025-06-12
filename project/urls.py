@@ -24,5 +24,9 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
+    path("500-test/", about_views.trigger_error, name="trigger-500"),
     path("", include("blog.urls"), name="blog-urls"),
 ]
+
+handler404 = "about.views.custom_404"
+handler500 = "about.views.custom_500"
