@@ -89,7 +89,7 @@
     </div>
     <main class="flex-shrink-0 main-bg">
         {% if user.is_authenticated %}
-        <p class="text-end m-3 logged-text"><span>Welcome back {{ user }}</span></p>
+        <p class="text-end m-3 logged-text"><span>Welcome back <strong>{{ user }}</strong></span></p>
         {% else %}
         <p class="text-end m-3 logged-text"><span>You are not logged in yet!</span></p>
         {% endif %}
