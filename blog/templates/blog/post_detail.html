@@ -77,13 +77,15 @@
                         {% endif %}
                         {% if user.is_authenticated and comment.author == user %}
                             <button
+                                type="button"
                                 class="btn btn-delete"
-                                data-comment-id="{{ comment.id }}">
+                                data-delete-url="{% url 'comment_delete' post.slug comment.id %}">
                                 Delete
                             </button>
                             <button
+                                type="button"
                                 class="btn btn-edit"
-                                data-comment-id="{{ comment.id }}">
+                                data-edit-url="{% url 'comment_edit' post.slug comment.id %}">
                                 Edit
                             </button>
                         {% endif %}
