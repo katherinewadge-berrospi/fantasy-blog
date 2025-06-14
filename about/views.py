@@ -7,35 +7,24 @@ from django.http import HttpRequest
 
 # Create your views here.
 def about_me(request):
-    """Renders the About page."""
+    """Renders the About page and handles collaboration requests."""
     if request.method == 'POST':
-        form = CollaborateForm(data=request.POST)
-        if form.is_valid():
-            form.save()
-            messages.add_message(
+        collaborate_form = CollaborateForm(request.POST)
+        if collaborate_form.is_valid():
+            collaborate_form.save()
+            messages.success(
                 request,
-                messages.SUCCESS,
-                (
-                    'Collaboration request received! '
-                    'I will try to respond within 2 working days.'
-                ),
+                "Collaboration request received! I will try to respond within 2 working days."
             )
+            collaborate_form = CollaborateForm()
+    else:
+        collaborate_form = CollaborateForm()
+    about = About.objects.order_by('-updated_on').first()
 
-    about = (
-        About.objects.all()
-        .order_by('-updated_on')
-        .first()
-    )
-    form = CollaborateForm()
-
-    return render(
-        request,
-        'about/about_me.html',
-        {
-            'about': about,
-            'collaborate_form': form,
-        },
-    )
+    return render(request, 'about/about_me.html', {
+        'about': about,
+        'collaborate_form': collaborate_form,
+    })
 
 
 def custom_404(request, exception):
