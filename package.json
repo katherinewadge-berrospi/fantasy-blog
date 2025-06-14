@@ -1,0 +1,23 @@
+{
+  "name": "fantasy-blog",
+  "version": "1.0.0",
+  "description": "A Django-based fantasy blog for faerie tales",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --colors --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katherinewadge-berrospi/fantasy-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katherinewadge-berrospi/fantasy-blog/issues"
+  },
+  "homepage": "https://github.com/katherinewadge-berrospi/fantasy-blog#readme",
+  "devDependencies": {
+    "jest": "^30.0.0"
+  }
+}
