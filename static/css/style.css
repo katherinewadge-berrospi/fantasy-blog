@@ -104,14 +104,21 @@ a, .post-link {
     position: relative;
     transition: color var(--transition-speed);
 }
+
 a::after, .post-link::after {
     content: '';
     position: absolute; bottom: -2px; left: 0;
     width: 0; height: 2px; background: var(--clr-deep-purple);
     transition: width var(--transition-speed);
 }
-a:hover, .post-link:hover { color: var(--clr-gold); }
-a:hover::after, .post-link:hover::after { width: 100%; }
+
+a:hover, .post-link:hover {
+    color: var(--clr-gold);
+}
+
+a:hover::after, .post-link:hover::after {
+    width: 100%;
+}
 
 /* Buttons */
 button:not(.btn-close), .btn, .btn-secondary, .btn-signup {
@@ -121,6 +128,7 @@ button:not(.btn-close), .btn, .btn-secondary, .btn-signup {
     padding: 0.75rem 1rem;
     transition: transform var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
 }
+
 button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     transform: scale(1.05);
     background: var(--clr-gold) !important;
@@ -187,6 +195,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   border: none;
   box-shadow: none;
 }
+
 .col-md-8.card:hover {
   transform: none;
 }
@@ -195,6 +204,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   border: none !important;
   box-shadow: none !important;
 }
+
 .col-md-4.card:hover {
   transform: none !important;
 }
@@ -228,13 +238,13 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     text-transform: uppercase;
 }
 
+/* Post details */
 .post-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
-.page-link {
+.post-link:hover, .page-link {
     color:var(--clr-deep-purple);
 }
 
@@ -248,6 +258,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     color: rgb(77, 77, 77);
 }
 
+/* Button Edits */
 .btn-edit {
     background-color: #188181;
     color: #fff;
@@ -258,28 +269,9 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     color: #23BBBB;
 }
 
-.link:hover,
-.link:active {
+.link:hover, .link:active {
     color: #445261;
     text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610 !important;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
 }
 
 .faded {
@@ -290,15 +282,6 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     color: rgb(222, 146, 168);
 }
 
-.hero {
-  width: 50%;
-  height: 50%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-}
-
 /* full-width floral border under each card’s excerpt */
 .card-border-img {
   display: block;
@@ -307,10 +290,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
   margin: 1rem 0;
 }
 
-.invisible-placeholder {
-  width: 100px;
-}
-
+/* Alert messages*/
 .alert {
     background-color: var(--clr-cream) !important;
     border: none !important;
@@ -327,8 +307,7 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     opacity: 0.5;
 }
 
-
-
+/* Responsive adjustments */
 @media (min-width: 768px) {
   .card {
     padding: 1rem;
