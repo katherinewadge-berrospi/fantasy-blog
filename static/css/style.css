@@ -345,9 +345,12 @@ button:hover, .btn:hover, .btn-secondary:hover, .btn-signup:hover {
     display: none;
   }
   h1, h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+  }
+  .masthead-text h1 .post-title {
+    font-size: 1.2rem;
   }
 }
